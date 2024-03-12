@@ -38,6 +38,24 @@ func (c *WorkwxApp) GetUser(userid string) (*UserInfo, error) {
 	return &obj, nil
 }
 
+// GetUser 读取成员
+func (c *WorkwxApp) GetUserDetail(ticket string) (*UserInfo, error) {
+	resp, err := c.execUserDetailGet(reqUserDetailGet{
+		USER_TICKET: ticket,
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	obj, err := resp.intoUserInfo()
+	if err != nil {
+		return nil, err
+	}
+
+	// TODO: return bare T instead of &T?
+	return &obj, nil
+}
+
 // UpdateUser 更新成员
 func (c *WorkwxApp) UpdateUser(userDetail *UserDetail) error {
 	_, err := c.execUserUpdate(reqUserUpdate{

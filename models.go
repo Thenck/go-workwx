@@ -150,11 +150,21 @@ type reqUserGet struct {
 	UserID string
 }
 
+type reqUserDetailGet struct {
+	USER_TICKET string
+}
+
 var _ urlValuer = reqUserGet{}
 
 func (x reqUserGet) intoURLValues() url.Values {
 	return url.Values{
 		"userid": {x.UserID},
+	}
+}
+
+func (x reqUserDetailGet) intoURLValues() url.Values {
+	return url.Values{
+		"user_ticket": {x.USER_TICKET},
 	}
 }
 
@@ -1250,11 +1260,11 @@ type Button struct {
 	Type int `json:"type,omitempty"`
 	// 按钮文案，建议不超过10个字
 	Text string `json:"text"`
-	// 按钮样式，目前可填1~4，不填或错填默认1
+	//按钮样式，目前可填1~4，不填或错填默认1
 	Style int `json:"style,omitempty"`
 	// 按钮key值，用户点击后，会产生回调事件将本参数作为EventKey返回，回调事件会带上该key值，最长支持1024字节，不可重复，button_list.type是0时必填
 	Key string `json:"key,omitempty"`
-	// 跳转事件的url，button_list.type是1时必填
+	//跳转事件的url，button_list.type是1时必填
 	URL string `json:"url,omitempty"`
 }
 
@@ -1912,23 +1922,30 @@ type respKfSyncMsg struct {
 }
 
 // reqOAGetCorpVacationConf 获取企业假期管理配置
+
 type reqOAGetCorpVacationConf struct {
 }
 
 var _ urlValuer = reqOAGetCorpVacationConf{}
 
 func (x reqOAGetCorpVacationConf) intoURLValues() url.Values {
+
 	return url.Values{}
+
 }
 
 // respOAGetCorpVacationConf 获取企业假期管理配置 响应
+
 type respOAGetCorpVacationConf struct {
 	respCommon
+
 	// Lists 假期列表
+
 	Lists []CorpVacationConf `json:"lists"`
 }
 
 // reqOAGetUserVacationQuota 获取成员假期余额
+
 type reqOAGetUserVacationQuota struct {
 	UserID string `json:"userid"`
 }
@@ -1936,32 +1953,45 @@ type reqOAGetUserVacationQuota struct {
 var _ bodyer = reqOAGetUserVacationQuota{}
 
 func (x reqOAGetUserVacationQuota) intoBody() ([]byte, error) {
+
 	return marshalIntoJSONBody(x)
+
 }
 
 // respOAGetUserVacationQuota 获取成员假期余额 响应
+
 type respOAGetUserVacationQuota struct {
 	respCommon
+
 	// Lists 假期列表
+
 	Lists []UserVacationQuota `json:"lists"`
 }
 
 // reqOASetOneUserVacationQuota 修改成员假期余额
+
 type reqOASetOneUserVacationQuota struct {
-	UserID       string `json:"userid"`
-	VacationID   string `json:"vacation_id"`
+	UserID string `json:"userid"`
+
+	VacationID string `json:"vacation_id"`
+
 	LeftDuration string `json:"leftduration"`
-	TimeAttr     int64  `json:"time_attr"`
-	Remarks      string `json:"remarks"`
+
+	TimeAttr int64 `json:"time_attr"`
+
+	Remarks string `json:"remarks"`
 }
 
 var _ bodyer = reqOASetOneUserVacationQuota{}
 
 func (x reqOASetOneUserVacationQuota) intoBody() ([]byte, error) {
+
 	return marshalIntoJSONBody(x)
+
 }
 
 // respOASetOneUserVacationQuota 修改成员假期余额 响应
+
 type respOASetOneUserVacationQuota struct {
 	respCommon
 }

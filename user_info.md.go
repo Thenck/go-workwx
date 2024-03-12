@@ -83,4 +83,6 @@ type UserIdentityInfo struct {
 	OpenID string `json:"OpenId"`
 	// DeviceID 手机设备号(由企业微信在安装时随机生成，删除重装会改变，升级不受影响)
 	DeviceID string `json:"DeviceId"`
+	USER_TICKET string `json:"user_ticket"`
+
 }
