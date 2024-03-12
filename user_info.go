@@ -156,3 +156,14 @@ func (c *WorkwxApp) GetUserInfoByCode(code string) (*UserIdentityInfo, error) {
 	}
 	return &resp.UserIdentityInfo, nil
 }
+
+// GetUserInfoByCode 获取访问用户身份，根据code获取成员信息
+func (c *WorkwxApp) GetAuthUserInfoByCode(code string) (*UserIdentityInfo, error) {
+	resp, err := c.execAuthUserInfoGet(reqUserInfoGet{
+		Code: code,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &resp.UserIdentityInfo, nil
+}
