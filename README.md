@@ -1,20 +1,20 @@
 # go-workwx
 
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/xen0n/go-workwx)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xen0n/go-workwx)
-![GitHub Workflow Status (develop branch)](https://img.shields.io/github/actions/workflow/status/xen0n/go-workwx/go.yml?branch=develop)
-[![GitHub license info](https://img.shields.io/github/license/xen0n/go-workwx)](./LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/github.com/xen0n/go-workwx)](https://goreportcard.com/report/github.com/xen0n/go-workwx)
-[![Go Reference](https://pkg.go.dev/badge/github.com/xen0n/go-workwx.svg)](https://pkg.go.dev/github.com/xen0n/go-workwx)
-![GitHub Repo stars](https://img.shields.io/github/stars/xen0n/go-workwx?style=social)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/Thenck/go-workwx)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Thenck/go-workwx)
+![GitHub Workflow Status (develop branch)](https://img.shields.io/github/actions/workflow/status/Thenck/go-workwx/go.yml?branch=develop)
+[![GitHub license info](https://img.shields.io/github/license/Thenck/go-workwx)](./LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Thenck/go-workwx)](https://goreportcard.com/report/github.com/Thenck/go-workwx)
+[![Go Reference](https://pkg.go.dev/badge/github.com/Thenck/go-workwx.svg)](https://pkg.go.dev/github.com/Thenck/go-workwx)
+![GitHub Repo stars](https://img.shields.io/github/stars/Thenck/go-workwx?style=social)
 
 [**本项目需要您的帮助！**][maintainer-needed]
 
-[maintainer-needed]: https://github.com/xen0n/go-workwx/issues/73
+[maintainer-needed]: https://github.com/Thenck/go-workwx/issues/73
 
 ```go
 import (
-    "github.com/xen0n/go-workwx" // package workwx
+    "github.com/Thenck/go-workwx" // package workwx
 )
 ```
 
@@ -304,4 +304,4 @@ Markdown 等类型消息目前不支持作为保密消息发送，强行发送�
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/xen0n/go-workwx.svg)](https://starchart.cc/xen0n/go-workwx)
+[![Stargazers over time](https://starchart.cc/Thenck/go-workwx.svg)](https://starchart.cc/Thenck/go-workwx)
