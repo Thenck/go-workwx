@@ -40,7 +40,7 @@ func (c *WorkwxApp) GetUser(userid string) (*UserInfo, error) {
 
 // GetUser 读取成员
 func (c *WorkwxApp) GetUserDetail(ticket string) (*UserInfo, error) {
-	resp, err := c.execUserDetailGet(reqUserDetailGet{
+	resp, err := c.execUserDetailPost(reqUserDetailGet{
 		USER_TICKET: ticket,
 	})
 	if err != nil {

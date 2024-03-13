@@ -151,7 +151,7 @@ type reqUserGet struct {
 }
 
 type reqUserDetailGet struct {
-	USER_TICKET string
+	USER_TICKET string `json:"user_ticket"`
 }
 
 var _ urlValuer = reqUserGet{}
@@ -162,10 +162,8 @@ func (x reqUserGet) intoURLValues() url.Values {
 	}
 }
 
-func (x reqUserDetailGet) intoURLValues() url.Values {
-	return url.Values{
-		"user_ticket": {x.USER_TICKET},
-	}
+func (x reqUserDetailGet) intoBody() ([]byte, error) {
+	return marshalIntoJSONBody(x)
 }
 
 // respUserGet 读取成员响应

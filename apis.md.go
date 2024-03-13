@@ -87,9 +87,9 @@ func (c *WorkwxApp) execUserGet(req reqUserGet) (respUserGet, error) {
 }
 
 // execUserGet 读取成员详情
-func (c *WorkwxApp) execUserDetailGet(req reqUserDetailGet) (respUserGet, error) {
+func (c *WorkwxApp) execUserDetailPost(req reqUserDetailGet) (respUserGet, error) {
 	var resp respUserGet
-	err := c.executeQyapiGet("/cgi-bin/auth/getuserdetail", req, &resp, true)
+	err := c.executeQyapiJSONPost("/cgi-bin/auth/getuserdetail", req, &resp, true)
 	if err != nil {
 		return respUserGet{}, err
 	}
