@@ -50,6 +50,11 @@ func InitApp() *cli.App {
 				Action: cmdUserGet,
 			},
 			{
+				Name:   "userdetail-get",
+				Usage:  "读取成员",
+				Action: cmdUserDetailGet,
+			},
+			{
 				Name:   "user-list-by-dept",
 				Usage:  "获取部门成员详情",
 				Action: cmdUserListByDept,

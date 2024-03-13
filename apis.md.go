@@ -243,7 +243,7 @@ func (c *WorkwxApp) execDeptSimpleList(req reqDeptSimpleList) (respDeptSimpleLis
 // execUserInfoGet 获取访问用户身份
 func (c *WorkwxApp) execAuthUserInfoGet(req reqUserInfoGet) (respUserInfoGet, error) {
 	var resp respUserInfoGet
-	err := c.executeQyapiGet("/cgi-bin/user/getuserinfo", req, &resp, true)
+	err := c.executeQyapiGet("/cgi-bin/auth/getuserinfo", req, &resp, true)
 	if err != nil {
 		return respUserInfoGet{}, err
 	}
